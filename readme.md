@@ -123,9 +123,9 @@ Após concluir o jogo, você receberá uma medalha com base no seu desempenho:
 * **Total de Pares em Jogo**: O número de pares que foram efetivamente carregados e exibidos no jogo atual.
 * **Exemplo**:
   * Se houver 10 pares em jogo:
-    * **Ouro**: Até 10 tentativas.
-    * **Prata**: De 11 a 15 tentativas.
-    * **Bronze**: Mais de 15 tentativas.
+    * **Ouro**: Até 12 tentativas.
+    * **Prata**: De 13 a 16 tentativas.
+    * **Bronze**: Mais de 16 tentativas.
 
 * * *
 
