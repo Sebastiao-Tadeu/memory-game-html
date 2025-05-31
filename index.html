@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Sebastião Tadeu de Oliveira Almeida and Alexsandra Barbosa da Silva">
+    <meta name="dcterms.rightsHolder" content="Sebastião Tadeu de O. Almeida and Alexsandra B. Silva">
+    <meta name="dcterms.dateCopyrighted" content="2024">
+    <title>Jogo da Memória - Imagem e Texto</title>
+    <link rel="stylesheet" href="styles.css">
+    </head>
+<body>
+    <div id="game-container">
+        <h1>Jogo da Memória - Imagem e Texto</h1>
+
+        <div id="rules">
+            <h2>Regras do Jogo:</h2>
+            <p>1. O jogo pode ser jogado em equipes ou individualmente.</p>
+            <p>2. Uma equipe continua jogando enquanto acertar.</p>
+            <p>3. Se errar, passa a vez para a outra equipe.</p>
+            <p>4. Ganha quem encontrar mais pares de cartas.</p>
+        </div>
+
+        <div id="instructions" style="display: none;">
+            <h2>Instruções</h2>
+            <p><strong>Bem-vindo ao Jogo da Memória - Imagem e Texto!</strong></p>
+            <p>Este jogo é uma ferramenta educativa que combina imagens e textos para ajudar no aprendizado de maneira divertida e interativa. Você pode jogar sozinho ou em equipes.</p>
+            <h3>Como Jogar:</h3>
+            <ol>
+                <li><strong>Preparação:</strong>
+                    <ul>
+                        <li>Clique no botão "Escolher arquivo" e selecione um arquivo CSV com os dados das cartas.</li>
+                        <li>Após selecionar o arquivo, clique em "Começar Jogo" para iniciar.</li>
+                    </ul>
+                </li>
+                <li><strong>Objetivo:</strong> Encontrar todos os pares de cartas correspondentes.</li>
+                <li><strong>Regras Básicas:</strong>
+                    <ul>
+                        <li>Clique em duas cartas para virá-las.</li>
+                        <li>Se as cartas forem um par, elas permanecem viradas.</li>
+                        <li>Se não forem, elas voltarão à posição original.</li>
+                        <li>No modo de equipes, a vez passa para a outra equipe se errar.</li>
+                    </ul>
+                </li>
+                <li><strong>Vencendo o Jogo:</strong> O jogo termina quando todos os pares forem encontrados. A equipe ou jogador com mais pares ganha.</li>
+            </ol>
+            <h3>Personalização:</h3>
+            <p>Você pode personalizar o jogo de acordo com suas preferências:</p>
+            <ul>
+                <li><strong>Configurações do Jogo:</strong> Clique em "Configurações" para ajustar:
+                    <ul>
+                        <li>Modo Single-Player ou de Equipes.</li>
+                        <li>Habilitar ou desabilitar a leitura das cartas.</li>
+                        <li>Dimensões das cartas (largura e altura).</li>
+                    </ul>
+                </li>
+                <li><strong>Conteúdo Personalizado:</strong> Crie um arquivo CSV com suas próprias imagens e textos para usar no jogo. O formato do arquivo deve ser:
+                    <pre><code>
+id,type,content,alt
+1,image,caminho/para/imagem1.png,Descrição da imagem 1
+1,text,Texto correspondente à imagem 1,
+2,image,caminho/para/imagem2.png,Descrição da imagem 2
+2,text,Texto correspondente à imagem 2,
+</code></pre>
+                </li>
+            </ul>
+            <h3>Vídeos Tutoriais</h3>
+            <h4>Como Iniciar o Jogo</h4>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/5sc8GBI-SC4?si=jKxP9ev1uDjDcwiD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <h4>Como Personalizar o Jogo</h4>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/3XbcM2T4pCo?si=vbh520BACuRUxgtf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+            <h3>Dicas:</h3>
+            <ul>
+                <li>Preste atenção às cartas que já foram viradas para lembrar suas posições.</li>
+                <li>Use estratégias de memória para melhorar seu desempenho.</li>
+            </ul>
+            <p>Divirta-se jogando e aprendendo!</p>
+            <button id="close-instructions-button" role="button">Fechar Instruções</button>
+        </div>
+
+        <input type="file" id="file-input" accept=".csv" aria-label="Escolher arquivo CSV" />
+        <button id="start-button" role="button" style="display: none;">Começar Jogo</button>
+        <button id="instructions-button" role="button">Instruções</button>
+        <button id="settings-button" role="button">Configurações</button>
+
+        <div id="message" aria-live="polite"></div>
+
+        <div id="cards-container"></div>
+
+        <button id="restart-button" role="button" style="display: none;">Reiniciar</button>
+
+        <div id="settings-modal" style="display: none;">
+            <h2>Configurações do Jogo</h2>
+            <label>
+                <input type="checkbox" id="single-player-mode">
+                Modo Single-Player
+            </label>
+            <label>
+                <input type="checkbox" id="enable-speech">
+                Habilitar Leitura das Cartas
+            </label>
+            <label>
+                Largura das Cartas:
+                <input type="number" id="card-width" value="175" min="50" max="300"> px
+            </label>
+            <label>
+                Altura das Cartas:
+                <input type="number" id="card-height" value="200" min="50" max="300"> px
+            </label>
+            <label>
+                Limitar número de pares (0 para usar todos):
+                <input type="number" id="max-pairs" value="0" min="0">
+            </label>
+            <button id="save-settings-button" role="button">Salvar Configurações</button>
+            <button id="close-settings-button" role="button">Fechar</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2024 Sebastião Tadeu de Oliveira Almeida e Alexsandra Barbosa da Silva. <a href="LICENSE.txt" target="_blank">MIT License</a>.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
