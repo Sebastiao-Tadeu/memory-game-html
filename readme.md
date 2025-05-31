@@ -97,7 +97,7 @@ id,type,content,alt
 
 #### Dicas
 
-* **Caminhos das Imagens**: Se as imagens estiverem na mesma pasta do `index.html`, você pode apenas usar o nome do arquivo (ex: `gato.png`). Se estiverem em uma subpasta (ex: `imagens`), use `imagens/gato.png`.
+* **Caminhos das Imagens**: Se as imagens estiverem na mesma pasta do `jogo_da_memoria.html`, você pode apenas usar o nome do arquivo (ex: `gato.png`). Se estiverem em uma subpasta (ex: `imagens`), use `imagens/gato.png`.
 * **Descrições Claras**: Use descrições significativas no campo `alt` para auxiliar na acessibilidade e para a leitura em voz alta.
 * **Consistência**: Certifique-se de que cada par de cartas compartilhe o mesmo `id` e que cada `id` apareça exatamente duas vezes no arquivo.
 
