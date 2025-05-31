@@ -1,0 +1,21 @@
+# Este é um arquivo CSV para o Jogo da Memória - Imagem e Texto
+# Formato: id,type,content,alt
+id,type,content,alt
+1,image,imagens/emocao/1.png,garoto expressando medo
+1,text,Medo
+2,image,imagens/emocao/2.png,homem expressando raiva
+2,text,Raiva
+3,image,imagens/emocao/3.png,menina expressando alegria
+3,text,Alegria
+4,image,imagens/emocao/4.png,menina expressando tristeza
+4,text,Tristeza
+5,image,imagens/emocao/5.png,garoto expressando nojo
+5,text,Nojo
+#6,image,imagens/U.png,
+#6,text,Triângulo Isósceles
+#7,image,imagens/V.png,
+#7,text,Losango
+#8,image,imagens/MUV.png,MUV
+#8,text,MUV,
+#9,image,imagens/MCU.png,MCU
+#9,text,MCU,

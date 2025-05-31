@@ -1,0 +1,25 @@
+# Este é um arquivo CSV para o Jogo da Memória - Imagem e Texto
+# Formato: id,type,content,alt
+id,type,content,alt
+1,image,eletricidade/1.png,
+1,text,ELETRIZAÇÃO POR ATRITO, Gato sendo esfregado com um bola de festa
+2,image,eletricidade/2.png,duas esferas com cargas e separadas por uma pequena distancia
+2,text,ETRIZAÇÃO POR INDUÇÃO,
+3,image,eletricidade/3.png,
+3,image,eletricidade/3-r.png,
+4,image,eletricidade/4.png,
+4,image,eletricidade/4-r.png,
+5,image,eletricidade/5.png, k vezes carga elétrica 1 vezes carga eletrica 2 divido por d ao quadrado
+5,text,LEI DE COULOMB,
+6,image,eletricidade/6.png,
+6,text,POTENCIAL ELÉTRICO,
+7,image,eletricidade/7.png,
+7,text,CARGA ELÉTRICA,
+8,image,eletricidade/8.png,
+8,text,CARGA ELÉTRICA NEGATIVA,
+9,image,eletricidade/9.png,
+9,text,CARGA ELÉTRICA POSITIVA,
+10,image,eletricidade/10.png,
+10,image,eletricidade/10-r.png,
+11,image,eletricidade/11.png,
+11,image,eletricidade/11-r.png,

@@ -1,0 +1,329 @@
+/*
+  Jogo da Memória - Imagem e Texto
+  Estilos CSS
+  Autores: Sebastião Tadeu de Oliveira Almeida e Alexsandra Barbosa da Silva
+  Ano: 2024
+  Licença: MIT License
+*/
+
+/* Estilos Globais */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f0f0f0;
+    /* Estilos movidos do <style> do HTML para garantir que o rodapé fique embaixo */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+#game-container {
+    text-align: center;
+    max-width: 1200px;
+    margin: 20px auto;
+    /* Estilo movido do <style> do HTML para garantir que o rodapé fique embaixo */
+    flex-grow: 1;
+}
+
+h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+h2 {
+    font-size: 24px;
+    color: #555;
+}
+
+#rules {
+    text-align: left;
+    margin-bottom: 20px;
+    color: #666;
+}
+
+#cards-container {
+    display: none; /* Será 'flex' quando o jogo iniciar */
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    margin: 20px 0;
+}
+
+button {
+    padding: 12px 24px;
+    font-size: 20px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+button#start-button {
+    background-color: #4CAF50;
+    color: white;
+}
+
+button#start-button:hover {
+    background-color: #45a049;
+}
+
+button#instructions-button {
+    background-color: #ff9800;
+    color: white;
+    margin-left: 10px;
+}
+
+button#instructions-button:hover {
+    background-color: #e68a00;
+}
+
+button#restart-button {
+    background-color: #008cba;
+    color: white;
+}
+
+button#restart-button:hover {
+    background-color: #007bb5;
+}
+
+button#settings-button {
+    background-color: #6a1b9a;
+    color: white;
+    margin-left: 10px;
+}
+
+button#settings-button:hover {
+    background-color: #4a148c;
+}
+
+/* Estilos das Cartas */
+.card {
+    margin: 10px;
+    background-color: #005a9c;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    border: 2px solid #ccc;
+    transition: transform 0.3s, background-color 0.3s, border-color 0.3s;
+    overflow: hidden;
+}
+
+.card:hover,
+.card:focus {
+    transform: scale(1.05);
+    background-color: #004080;
+    border-color: #008cba;
+    outline: 3px solid #ffa500; /* Melhora a visibilidade do foco */
+}
+
+.card.revealed {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.card-number {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 2px 5px;
+    border-radius: 3px;
+    color: #333;
+    font-size: 0.8em; /* Ajuste opcional para o tamanho do número */
+}
+
+/* Estilos das Imagens */
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* 'contain' é bom para não cortar a imagem */
+}
+
+/* Estilos do Texto dentro das Cartas */
+.card .text {
+    padding: 10px;
+    font-size: calc(14px + 0.5vw); /* Fonte responsiva */
+    text-align: center;
+    color: #000000; /* Cor do texto quando revelado */
+    /* Centralização vertical e horizontal */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%; /* Garante que o texto ocupe toda a área para centralização */
+    box-sizing: border-box; /* Inclui padding na altura/largura total */
+}
+
+/* Ocultar conteúdo das cartas não reveladas (acessibilidade) */
+.card:not(.revealed) img,
+.card:not(.revealed) .text {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
+    border: 0;
+}
+
+#message {
+    margin: 20px 0;
+    font-size: 24px;
+    color: #333;
+}
+
+/* Estilos dos Modais de Instruções e Configurações */
+#instructions,
+#settings-modal {
+    text-align: left;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-top: 20px; /* Será sobrescrito pelo posicionamento fixed */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000; /* Para ficar sobre outros elementos */
+    max-width: 90%; /* Ajustado para melhor visualização em telas menores */
+    width: 500px; /* Largura fixa, mas max-width garante que não ultrapasse */
+    max-height: 80vh; /* Altura máxima relativa à viewport height */
+    overflow-y: auto; /* Scroll vertical se o conteúdo for maior */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2); /* Sombra para destaque */
+}
+
+#instructions h2,
+#settings-modal h2 {
+    color: #333;
+    margin-top: 0; /* Remove margem superior padrão do h2 no modal */
+}
+
+#instructions p,
+#instructions ul,
+#instructions ol,
+#settings-modal label {
+    color: #555;
+    line-height: 1.6; /* Melhora a legibilidade */
+}
+
+#instructions ul,
+#instructions ol {
+    margin-left: 20px;
+    padding-left: 10px; /* Ajuste para alinhar melhor com o texto */
+}
+
+/* Botões dentro dos modais */
+#instructions button,
+#settings-modal button {
+    margin-top: 20px;
+    background-color: #f44336; /* Cor vermelha para fechar/cancelar */
+    color: white;
+}
+
+#instructions button:hover,
+#settings-modal button:hover {
+    background-color: #d32f2f;
+}
+
+/* Botão de salvar configurações específico */
+#settings-modal #save-settings-button {
+    background-color: #4CAF50; /* Verde para salvar */
+}
+#settings-modal #save-settings-button:hover {
+    background-color: #45a049;
+}
+
+
+#settings-modal label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* Estilos do Rodapé (movidos do <style> do HTML) */
+footer {
+    text-align: center;
+    padding: 15px 0; /* Aumentei um pouco o padding */
+    background-color: #e9e9e9; /* Tom um pouco diferente do body */
+    border-top: 1px solid #ccc; /* Linha superior mais clara */
+    font-size: 0.9em;
+    color: #444; /* Cor do texto um pouco mais escura */
+    margin-top: 20px; /* Espaço acima do rodapé, já presente */
+    width: 100%; /* Garante que ocupe toda a largura */
+}
+
+footer a {
+    color: #005a9c; /* Azul mais alinhado com a cor das cartas */
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) { /* Ponto de quebra um pouco maior */
+    #game-container {
+        margin: 10px auto;
+        padding: 0 10px; /* Adiciona padding lateral no container */
+    }
+
+    h1 {
+        font-size: 28px; /* Ajuste fino */
+    }
+
+    .card {
+        /* Ajustes nas cartas para telas menores podem ser necessários
+           dependendo da quantidade de cartas e do tamanho definido no JS.
+           Por exemplo, forçar uma largura menor: */
+        /* width: calc( (100% / NUMERO_DE_COLUNAS_DESEJADO) - (MARGEM_TOTAL_ENTRE_CARTAS) ); */
+    }
+
+    #instructions,
+    #settings-modal {
+        width: auto; /* Permite que o max-width controle */
+        left: 5%; /* Ajusta o posicionamento para não colar nas bordas */
+        right: 5%;
+        transform: translate(0, -50%); /* Ajusta a transformação para o novo left/right */
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 600px) {
+    .card {
+        font-size: 14px;
+        /* Se a largura e altura são definidas via JS, este font-size pode não ter muito efeito
+           a menos que o conteúdo da carta (texto) dependa dele.
+           A responsividade das cartas em si (largura/altura) é controlada
+           pelas configurações no modal e aplicadas via JS.
+           Pode ser necessário ajustar 'cardWidthInput' e 'cardHeightInput'
+           ou ter colunas mais flexíveis. */
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    #message {
+        font-size: 18px;
+    }
+
+    button {
+        padding: 10px 20px; /* Ajuste fino */
+        font-size: 18px; /* Ajuste fino */
+    }
+
+    #instructions,
+    #settings-modal {
+        /* max-width: 95%; */ /* Já coberto pelo 90% do @media anterior */
+        max-height: 85vh; /* Permite um pouco mais de altura em telas pequenas */
+    }
+}
