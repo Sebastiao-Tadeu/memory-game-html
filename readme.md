@@ -143,13 +143,9 @@ Licença
 
 Este projeto está licenciado sob a **Licença MIT**.
 
-Isso significa que você tem liberdade para usar, copiar, modificar, mesclar, publicar, distribuir, sublicenciar e/ou vender cópias do Software, e permitir que as pessoas a quem o Software é fornecido o façam, sujeito às seguintes condições:
 
-O aviso de copyright acima e este aviso de permissão devem ser incluídos em todas as cópias ou partes substanciais do Software.
 
-O SOFTWARE É FORNECIDO "COMO ESTÁ", SEM GARANTIA DE QUALQUER TIPO, EXPRESSA OU IMPLÍCITA, INCLUINDO MAS NÃO SE LIMITANDO A GARANTIAS DE COMERCIALIZAÇÃO, ADEQUAÇÃO A UM PROPÓSITO ESPECÍFICO E NÃO INFRAÇÃO. EM NENHUM CASO OS AUTORES OU DETENTORES DO COPYRIGHT SERÃO RESPONSÁVEIS POR QUALQUER REIVINDICAÇÃO, DANOS OU OUTRA RESPONSABILIDADE, SEJA EM AÇÃO DE CONTRATO, DELITO OU DE OUTRA FORMA, DECORRENTE DE, OU EM CONEXÃO COM O SOFTWARE OU O USO OU OUTRAS NEGOCIAÇÕES NO SOFTWARE.
-
-Para o texto completo da licença, consulte o arquivo [LICENSE.txt](https://www.google.com/search?q=LICENSE.txt) incluído neste repositório.
+Para o texto completo da licença, consulte o arquivo  [License.txt · Sebastiao-Tadeu/memory-game-html@75119f4 · GitHub](https://github.com/Sebastiao-Tadeu/memory-game-html/commit/75119f4f2c19898fbb3a6eedba8a7f9e0b2e5f2d) incluído neste repositório.
 
 * * *
 
