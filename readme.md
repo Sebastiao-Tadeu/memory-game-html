@@ -1,14 +1,21 @@
-## Jogo da Memória - Imagem e Texto
+#### Jogo da Memória - Imagem e Texto
 
 Bem-vindo ao **Jogo da Memória - Imagem e Texto**! Este é um jogo educativo interativo projetado para tornar o aprendizado divertido e envolvente. Ideal para ser utilizado em salas de Atendimento Educacional Especializado (AEE), salas de aula ou para estudo individual, o jogo permite a personalização completa do conteúdo para atender às necessidades específicas dos usuários.
+
+**Jogue Online Agora:** [`https://sebastiao-tadeu.github.io/memory-game-html/`](https://sebastiao-tadeu.github.io/memory-game-html/)
 
 ## Sumário
 
 * [Características](#características)
 * [Como Jogar](#como-jogar)
-* [Personalização](#personalização)
-  * [Configurações do Jogo](#configurações-do-jogo)
-  * [Conteúdo Personalizado](#conteúdo-personalizado)
+  * [Jogando Online](#jogando-online)
+  * [Objetivo do Jogo](#objetivo-do-jogo)
+  * [Regras Básicas](#regras-básicas)
+* [Configurações do Jogo](#configurações-do-jogo)
+* [Personalização de Conteúdo](#personalização-de-conteúdo)
+  * [Formato do Arquivo CSV (Comum para Online e Offline)](#formato-do-arquivo-csv-comum-para-online-e-offline)
+  * [1. Personalização para Jogar Online (Usando Imagens da Internet)](#1-personalização-para-jogar-online-usando-imagens-da-internet)
+  * [2. Personalização para Jogar Offline (Usando Imagens do seu Computador)](#2-personalização-para-jogar-offline-usando-imagens-do-seu-computador)
 * [Sistema de Medalhas](#sistema-de-medalhas)
 * [Requisitos](#requisitos)
 * [Contribuindo](#contribuindo)
@@ -19,58 +26,68 @@ Bem-vindo ao **Jogo da Memória - Imagem e Texto**! Este é um jogo educativo in
 
 ## Características
 
-* **Personalizável**: Crie suas próprias cartas com imagens e textos através de um arquivo CSV.
-* **Modo de jogo**: Jogue individualmente ou em equipes, realize a seleção nas configurações.
-* **Acessibilidade**: Compatível com leitores de tela e navegável via teclado (tecla tab).
-* **Medalhas**: Receba medalhas de ouro, prata ou bronze com base no seu desempenho.
+* **Jogue Online ou Offline**: Acesse o jogo diretamente pelo navegador ou baixe para usar com seus arquivos locais.
+* **Totalmente Personalizável**: Crie suas próprias cartas com imagens e textos através de um arquivo CSV.
+* **Modos de Jogo**: Jogue individualmente ou em equipes (selecionável nas configurações).
+* **Configurações Ajustáveis**: Defina o número de pares, dimensões das cartas e habilite/desabilite a leitura de cartas.
+* **Acessibilidade**: Compatível com leitores de tela e navegável via teclado.
+* **Sistema de Medalhas**: Receba medalhas de ouro, prata ou bronze com base no seu desempenho.
 
 * * *
 
 ## Como Jogar
 
-### Preparação
+### Jogando Online
 
-1. **Selecionar o Arquivo CSV**:
-   * Clique no botão **"Escolher arquivo"** e selecione um arquivo CSV com os dados das cartas.
-2. **Iniciar o Jogo**:
-   * Após selecionar o arquivo, clique em **"Começar Jogo"**.
+Você pode jogar a versão mais recente do jogo diretamente no seu navegador através do seguinte link:
+[**JOGAR ONLINE AGORA: https://sebastiao-tadeu.github.io/memory-game-html/**](https://sebastiao-tadeu.github.io/memory-game-html/)
 
-### Objetivo
+No jogo online:
+
+1. Clique no botão **"Escolher arquivo"** e selecione um arquivo `.csv` com os dados das cartas.
+   * Para que as imagens personalizadas funcionem na versão online, elas **devem estar hospedadas na internet** e seus links diretos (URLs) devem ser usados no arquivo CSV. Veja a seção "Personalização para Jogar Online" abaixo para mais detalhes.
+2. Após selecionar o arquivo, clique em **"Começar Jogo"**.
+
+### Objetivo do Jogo
 
 * Encontrar todos os pares de cartas correspondentes no menor número de tentativas possível.
 
 ### Regras Básicas
 
 * **Virar cartas**: Clique em duas cartas para revelá-las.
-* **Encontrar pares**: Se as cartas forem um par, elas permanecerão viradas. Caso contrário, serão ocultadas novamente.
-* **Turnos**: No modo de equipes, a vez passa para a outra equipe se um par não for encontrado.
-* **Vencendo o jogo**: O jogo termina quando todos os pares forem encontrados. A equipe ou jogador com mais pares vence.
+* **Encontrar pares**: Se as cartas forem um par, elas permanecerão viradas. Caso contrário, serão ocultadas novamente após um curto período.
+* **Turnos (Modo Equipes)**: Se um par não for encontrado, a vez passa para a outra equipe. Uma equipe continua jogando enquanto acerta.
+* **Vencendo o jogo**: O jogo termina quando todos os pares forem encontrados. No modo de equipes, a equipe com mais pares vence. No modo individual, o jogador vence ao encontrar todos os pares.
 
 * * *
 
-## Personalização
+## Configurações do Jogo
 
-### Configurações do jogo
+Antes de iniciar uma partida, ou mesmo durante (as alterações podem exigir um reinício do jogo para pleno efeito), clique em **"Configurações"** para ajustar:
 
-Clique em **"Configurações"** para ajustar as seguintes opções:
+* **Modo Single-Player**: Ative para jogar sozinho. Desative para jogar em modo de equipes.
+* **Habilitar Leitura das Cartas**: Ative para que o conteúdo das cartas (texto ou descrição `alt` da imagem) seja lido em voz alta (requer suporte do navegador à Web Speech API).
+* **Dimensões das Cartas**: Ajuste a **largura** e **altura** das cartas (em pixels) conforme sua preferência.
+* **Limitar número de pares**: Defina um número máximo de pares para o jogo. Se o arquivo CSV contiver mais pares que o limite, o jogo selecionará aleatoriamente o número de pares definido. Digite `0` para usar todos os pares do arquivo CSV.
 
-* **Modo single-player**: Ative para jogar sozinho.
-* **Habilitar leitura das cartas**: Ative para que as cartas sejam lidas em voz alta (requer suporte do navegador).
-* **Dimensões das cartas**: Ajuste a **largura** e **altura** das cartas conforme sua preferência.
-* **Limitar número de pares**: Defina um número máximo de pares para o jogo (0 para usar todos os pares do arquivo CSV). O jogo selecionará aleatoriamente os pares se o limite for menor que o total disponível.
+* * *
 
-### Conteúdo personalizado
+## Personalização de Conteúdo
 
-Você pode criar suas próprias cartas utilizando um arquivo CSV. Siga as instruções abaixo:
+O grande diferencial deste jogo é a capacidade de personalizá-lo com suas próprias imagens e textos! Isso é feito através de um arquivo `.csv` (Valores Separados por Vírgula).
 
-#### Formato do arquivo CSV
+### Formato do Arquivo CSV (Comum para Online e Offline)
 
-O arquivo deve conter os seguintes campos, separados por vírgula:
+O arquivo CSV deve seguir um formato específico para que o jogo possa entendê-lo. Cada linha representa uma carta, e as colunas devem ser:
 
-* **id**: Número identificador do par (use o mesmo número para cartas que formam um par).
-* **type**: Tipo de conteúdo (`image` ou `text`).
-* **content**: Caminho para a imagem (relativo à localização do `index.html` se for local, ou URL completa) ou o texto da carta.
-* **alt**: Texto alternativo para a imagem (importante para acessibilidade; pode ser deixado vazio se o tipo for `text`, mas uma breve descrição é útil).
+1. **`id`**: Um número identificador para o par. Cartas que formam um par devem ter o mesmo `id`.
+2. **`type`**: O tipo de conteúdo da carta. Use `image` para imagens ou `text` para texto.
+3. **`content`**:
+   * Se `type` for `image`, esta coluna deve conter o caminho ou URL da imagem.
+   * Se `type` for `text`, esta coluna deve conter o texto a ser exibido na carta.
+4. **`alt`**:
+   * Se `type` for `image`, esta coluna deve conter um texto alternativo descritivo para a imagem (importante para acessibilidade e para a leitura em voz alta).
+   * Se `type` for `text`, esta coluna pode ser deixada vazia ou conter uma breve descrição (opcional).
 
 #### Exemplo de Arquivo CSV
 
@@ -86,60 +103,87 @@ id,type,content,alt
 3,text,Alegria
 ```
 
-#### Passos para Personalização
+#### 1. Personalização para Jogar Online (Usando Imagens da Internet)
 
-1. **Criar o Arquivo CSV**:
-   * Utilize um editor de texto simples (como Bloco de Notas, VS Code, Sublime Text) ou um software de planilha (Excel, Google Sheets, LibreOffice Calc) para criar o arquivo seguindo o formato acima.
-2. **Salvar o Arquivo CSV**:
-   * Certifique-se de salvar o arquivo com a extensão `.csv` (por exemplo, `meu_jogo_da_memoria.csv`). Se usar um software de planilha, escolha "Salvar Como" e selecione o tipo CSV.
-3. **Selecionar o Arquivo no Jogo**:
-   * No jogo, clique em **"Escolher arquivo"** e selecione seu arquivo CSV personalizado.
+Ao jogar a versão online (disponível em [Jogo da Memória - Imagem e Texto](https://sebastiao-tadeu.github.io/memory-game-html/)), se você quiser usar um arquivo CSV com suas próprias imagens, essas imagens **precisam estar acessíveis publicamente na internet**.
 
-#### Dicas
+* **Fontes de Imagem:**
+  
+  * **Serviços de Hospedagem de Imagens:** Faça upload das suas imagens para serviços como [Imgur](https://imgur.com/), [Postimages](https://postimages.org/) ou similar. Após o upload, esses serviços fornecem um **"Link Direto"** (geralmente terminando em `.png`, `.jpg`, etc., e começando com `https://i.imgur.com/...` no caso do Imgur). É este link direto que você deve usar na coluna `content` do seu CSV.
+  * **Outras Fontes Online:** Qualquer imagem que já esteja online e tenha uma URL pública direta pode ser usada.
+  * **Google Drive/Dropbox, etc.:** Links de compartilhamento padrão desses serviços geralmente **não** são links diretos para a imagem e podem não funcionar. É preciso obter um link que sirva a imagem diretamente (o que pode ser complicado ou não confiável). Prefira serviços de hospedagem de imagens.
 
-* **Caminhos das Imagens**: Se as imagens estiverem na mesma pasta do `jogo_da_memoria.html`, você pode apenas usar o nome do arquivo (ex: `gato.png`). Se estiverem em uma subpasta (ex: `imagens`), use `imagens/gato.png`.
-* **Descrições Claras**: Use descrições significativas no campo `alt` para auxiliar na acessibilidade e para a leitura em voz alta.
-* **Consistência**: Certifique-se de que cada par de cartas compartilhe o mesmo `id` e que cada `id` apareça exatamente duas vezes no arquivo.
+* **Exemplo de Linha no CSV para Jogo Online (usando Imgur):**
+
+      1,image,https://i.imgur.com/imagem.png, Descrição da imagem
+
+* **Importante:** Caminhos para arquivos no seu computador (ex: `C:\Imagens\foto.png` ou `minhas_fotos/gato.jpg`) **não funcionarão** na versão online devido às restrições de segurança dos navegadores.
+
+### 2. Personalização para Jogar Offline (Usando Imagens do seu Computador)
+
+Se você prefere usar imagens que estão salvas no seu computador sem precisar enviá-las para a internet, você pode baixar o jogo e executá-lo localmente.
+
+* **Passo 1: Baixar os Arquivos do Jogo**
+  
+  1. Acesse o repositório do jogo no GitHub: [`https://github.com/sebastiao-tadeu/memory-game-html/`](https://www.google.com/url?sa=E&source=gmail&q=https://github.com/sebastiao-tadeu/memory-game-html/) (Este é o link do seu jogo online, o repositório pode ter o mesmo nome ou similar).
+  2. Clique no botão verde **"&lt; > Code"** (Código).
+  3. No menu dropdown, selecione **"Download ZIP"**.
+  4. Salve o arquivo ZIP no seu computador e extraia o conteúdo para uma pasta de sua preferência (ex: `C:\Jogos\JogoDaMemoria`).
+
+* **Passo 2: Preparar seu CSV e Imagens Locais**
+  
+  1. Dentro da pasta onde você extraiu o jogo (ex: `JogoDaMemoria`), você pode criar uma subpasta para suas imagens (ex: `minhas_imagens_locais`).
+  
+  2. Copie suas imagens para essa subpasta.
+  
+  3. Crie seu arquivo CSV (ou copie um existente para esta pasta). Na coluna `content` para as imagens, use o **caminho relativo** para suas imagens locais, a partir da localização do arquivo `index.html`.
+     
+     * Exemplo: Se seu `index.html` está em `JogoDaMemoria/index.html` e sua imagem `gato.png` está em `JogoDaMemoria/minhas_imagens_locais/gato.png`, o caminho no CSV seria: `minhas_imagens_locais/gato.png`.
+     
+     * Se a imagem estiver na mesma pasta que o `index.html`, o caminho seria apenas `gato.png`.
+     
+     * **Exemplo de Linha no CSV para Jogo Offline:**
+          1,image,minhas_imagens_locais/gato.png,Gato laranja da minha pasta local
+
+* **Passo 3: Jogar Offline**
+  
+  1. Navegue até a pasta onde você extraiu o jogo e preparou seus arquivos.
+  2. Encontre o arquivo `index.html` e dê um duplo clique nele (ou "Abrir com" seu navegador preferido).
+  3. O jogo abrirá no seu navegador. A URL na barra de endereços começará com `file:///...`.
+  4. Agora, no jogo, clique em "Escolher arquivo" e selecione o seu arquivo CSV com os caminhos para as imagens locais. As imagens devem carregar corretamente.
 
 * * *
 
-Sistema de medalhas
+Sistema de Medalhas
 -------------------
 
-Após concluir o jogo, você receberá uma medalha com base no seu desempenho:
+Após concluir o jogo, você receberá uma medalha com base no seu desempenho (considerando o número de pares efetivamente em jogo):
 
 * **Medalha de Ouro 🥇**:
-  * **Critério**: Número de tentativas menor ou igual ao número total de pares em jogo + 2.
-  * **Significado**: Excelente desempenho!
+  * **Critério**: Número de tentativas menor ou igual a (`total de pares em jogo + 2`). _Exemplo: para 10 pares, até 12 tentativas._
+  * **Significado**: Desempenho muito bom!
 * **Medalha de Prata 🥈**:
-  * **Critério**: Número de tentativas menor ou igual a 1,6 vezes o número total de pares em jogo.
+  * **Critério**: Número de tentativas menor ou igual a (`total de pares em jogo * 1.5`). _Exemplo: para 10 pares, até 15 tentativas._
   * **Significado**: Bom desempenho!
 * **Medalha de Bronze 🥉**:
-  * **Critério**: Número de tentativas superior a 1,6 vezes o número total de pares em jogo.
-  * **Significado**: Desempenho satisfatório.
+  * **Critério**: Número de tentativas superior ao critério da Prata.
+  * **Significado**: Desempenho satisfatório, continue tentando!
 
-**Como é Calculado:**
-
-* **Total de Pares em Jogo**: O número de pares que foram efetivamente carregados e exibidos no jogo atual.
-* **Exemplo**:
-  * Se houver 10 pares em jogo:
-    * **Ouro**: Até 12 tentativas.
-    * **Prata**: De 13 a 16 tentativas.
-    * **Bronze**: Mais de 16 tentativas.
+_(Os critérios exatos das medalhas podem ser ajustados pelo desenvolvedor. A sugestão acima torna o Ouro mais acessível que a perfeição.)_
 
 * * *
 
 Requisitos
 ----------
 
-* **Navegador compatível**: Versões recentes do Chrome, Firefox, Safari ou Edge.
-* **JavaScript habilitado**: O jogo utiliza JavaScript para funcionar.
-* **Suporte a voz (opcional)**: Para a leitura das cartas, o navegador deve suportar a API de Síntese de Voz (Web Speech API).
+* **Navegador moderno**: Versões recentes do Chrome, Firefox, Safari ou Edge.
+* **JavaScript habilitado**: O jogo é construído com JavaScript e requer que ele esteja ativo no navegador.
+* **Suporte a Web Speech API (opcional)**: Para a funcionalidade de "leitura das cartas", o navegador do usuário precisa suportar a API de síntese de voz.
 
 * * *
 
 Licença
--------
+------------
 
 Este projeto está licenciado sob a **Licença MIT**.
 
@@ -159,3 +203,5 @@ Créditos
     * GitHub:[Sebastiao-Tadeu · GitHub](https://github.com/Sebastiao-Tadeu)
   * **Alexsandra Barbosa da Silva**
     * Email: [alexsa7@gmail.com](mailto:alexa7@gmail.com)
+
+
