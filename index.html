@@ -21,62 +21,98 @@
         </div>
 
         <div id="instructions" style="display: none;">
-            <h2>Instruções</h2>
-            <p><strong>Bem-vindo ao Jogo da Memória - Imagem e Texto!</strong></p>
-            <p>Este jogo é uma ferramenta educativa que combina imagens e textos para ajudar no aprendizado de maneira divertida e interativa. Você pode jogar sozinho ou em equipes.</p>
-            <h3>Como Jogar:</h3>
-            <ol>
-                <li><strong>Preparação:</strong>
-                    <ul>
-                        <li>Clique no botão "Escolher arquivo" e selecione um arquivo CSV com os dados das cartas.</li>
-                        <li>Após selecionar o arquivo, clique em "Começar Jogo" para iniciar.</li>
-                    </ul>
-                </li>
-                <li><strong>Objetivo:</strong> Encontrar todos os pares de cartas correspondentes.</li>
-                <li><strong>Regras Básicas:</strong>
-                    <ul>
-                        <li>Clique em duas cartas para virá-las.</li>
-                        <li>Se as cartas forem um par, elas permanecem viradas.</li>
-                        <li>Se não forem, elas voltarão à posição original.</li>
-                        <li>No modo de equipes, a vez passa para a outra equipe se errar.</li>
-                    </ul>
-                </li>
-                <li><strong>Vencendo o Jogo:</strong> O jogo termina quando todos os pares forem encontrados. A equipe ou jogador com mais pares ganha.</li>
-            </ol>
-            <h3>Personalização:</h3>
-            <p>Você pode personalizar o jogo de acordo com suas preferências:</p>
-            <ul>
-                <li><strong>Configurações do Jogo:</strong> Clique em "Configurações" para ajustar:
-                    <ul>
-                        <li>Modo Single-Player ou de Equipes.</li>
-                        <li>Habilitar ou desabilitar a leitura das cartas.</li>
-                        <li>Dimensões das cartas (largura e altura).</li>
-                    </ul>
-                </li>
-                <li><strong>Conteúdo Personalizado:</strong> Crie um arquivo CSV com suas próprias imagens e textos para usar no jogo. O formato do arquivo deve ser:
-                    <pre><code>
-id,type,content,alt
-1,image,caminho/para/imagem1.png,Descrição da imagem 1
-1,text,Texto correspondente à imagem 1,
-2,image,caminho/para/imagem2.png,Descrição da imagem 2
-2,text,Texto correspondente à imagem 2,
-</code></pre>
-                </li>
-            </ul>
-            <h3>Vídeos Tutoriais</h3>
-            <h4>Como Iniciar o Jogo</h4>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/5sc8GBI-SC4?si=jKxP9ev1uDjDcwiD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            <h4>Como Personalizar o Jogo</h4>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/3XbcM2T4pCo?si=vbh520BACuRUxgtf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <h2>Instruções do Jogo da Memória</h2>
+    <p><strong>Bem-vindo ao Jogo da Memória - Imagem e Texto!</strong></p>
+    <p>Este jogo é uma ferramenta educativa interativa projetada para auxiliar no aprendizado de forma divertida. Você pode jogar sozinho ou em equipes, usando o conteúdo padrão (se houver) ou personalizando completamente as cartas!</p>
 
-            <h3>Dicas:</h3>
+    <h3>Como Jogar:</h3>
+    <ol>
+        <li><strong>Preparação Inicial:</strong>
             <ul>
-                <li>Preste atenção às cartas que já foram viradas para lembrar suas posições.</li>
-                <li>Use estratégias de memória para melhorar seu desempenho.</li>
+                <li>Clique no botão <strong>"Escolher arquivo"</strong> na tela inicial.</li>
+                <li>Selecione um arquivo no formato <strong>CSV</strong> (.csv) que contém os dados das cartas que você deseja usar. (Veja a seção "Personalização do Conteúdo" abaixo para aprender a criar seu próprio arquivo CSV).</li>
+                <li>Após o arquivo ser carregado com sucesso, o botão <strong>"Começar Jogo"</strong> aparecerá. Clique nele para iniciar!</li>
             </ul>
-            <p>Divirta-se jogando e aprendendo!</p>
-            <button id="close-instructions-button" role="button">Fechar Instruções</button>
-        </div>
+        </li>
+        <li><strong>Objetivo do Jogo:</strong>
+            <ul>
+                <li>Encontrar todos os pares de cartas correspondentes.</li>
+                <li>Tente fazer isso no menor número de tentativas possível para ganhar uma medalha melhor!</li>
+            </ul>
+        </li>
+        <li><strong>Durante o Jogo (Regras Básicas):</strong>
+            <ul>
+                <li>Clique em duas cartas para virá-las e revelar seu conteúdo.</li>
+                <li><strong>Se as cartas formarem um par</strong> (tiverem o mesmo `id` no arquivo CSV), elas permanecerão viradas para cima.</li>
+                <li><strong>Se não formarem um par</strong>, elas serão viradas para baixo novamente após um curto instante. Tente memorizar suas posições e conteúdos!</li>
+                <li><strong>Modo de Equipes:</strong> Se estiver jogando em equipes, uma equipe continua jogando enquanto acerta os pares. Se errar, a vez passa para a outra equipe.</li>
+            </ul>
+        </li>
+        <li><strong>Fim de Jogo e Vitória:</strong>
+            <ul>
+                <li>O jogo termina quando todos os pares forem encontrados.</li>
+                <li>No modo de equipes, ganha a equipe que encontrar mais pares. Se houver empate no número de pares, o critério de desempate pode ser o menor número de tentativas totais da equipe.</li>
+                <li>No modo individual, você vence ao encontrar todos os pares e sua performance será avaliada pelo sistema de medalhas.</li>
+            </ul>
+        </li>
+    </ol>
+
+    <h3>Configurações do Jogo:</h3>
+    <p>Antes de iniciar, clique no botão <strong>"Configurações"</strong> para ajustar o jogo às suas preferências:</p>
+    <ul>
+        <li><strong>Modo Single-Player ou de Equipes:</strong> Escolha se vai jogar sozinho ou em modo colaborativo/competitivo com duas equipes.</li>
+        <li><strong>Habilitar Leitura das Cartas:</strong> Se ativado, o jogo usará a síntese de voz do seu navegador para ler o conteúdo textual das cartas ou a descrição alternativa (alt) das imagens quando elas forem viradas.</li>
+        <li><strong>Dimensões das Cartas:</strong> Personalize a largura e a altura das cartas para melhor visualização ou para ajustar a dificuldade.</li>
+        <li><strong>Limitar número de pares:</strong> Você pode definir quantos pares deseja jogar. Se o seu arquivo CSV tiver mais pares do que o limite definido, o jogo selecionará aleatoriamente o número de pares especificado. Digite `0` para usar todos os pares disponíveis no arquivo CSV.</li>
+    </ul>
+
+    <h3>Personalização do Conteúdo (Avançado)</h3>
+    <p>Crie seu próprio jogo da memória com imagens e textos personalizados usando um arquivo CSV (Valores Separados por Vírgula).</p>
+    <h4>Formato do Arquivo CSV:</h4>
+    <p>Seu arquivo CSV <strong>deve</strong> ter a seguinte linha de cabeçalho na primeira linha, seguida pelos dados das cartas:</p>
+    <pre><code>id,type,content,alt</code></pre>
+    <ul>
+        <li><strong>id:</strong> Um número ou identificador único para cada par. As duas cartas que formam um par devem ter o mesmo 'id'.</li>
+        <li><strong>type:</strong> Defina como <code>image</code> para uma carta de imagem, ou <code>text</code> para uma carta de texto.</li>
+        <li><strong>content (Conteúdo da Carta):</strong>
+            <ul>
+                <li>Se <code>type="image"</code>:
+                    <ul>
+                        <li><strong>Para esta versão online do jogo:</strong> Você DEVE usar uma URL (link direto) de uma imagem hospedada na internet (ex: de sites como <a href="https://imgur.com/" target="_blank">Imgur.com</a>). O link direto geralmente começa com <code>https://i.imgur.com/...</code> e termina com <code>.png</code>, <code>.jpg</code>, etc. Caminhos para arquivos do seu computador (ex: <code>C:\minhas_fotos\gato.png</code>) não funcionarão aqui.</li>
+                        <li><strong>Se você baixar o jogo para jogar offline (do seu computador):</strong> Você poderá usar caminhos relativos para imagens salvas no seu computador (ex: <code>minhas_imagens/gato.png</code>, assumindo que a pasta `minhas_imagens` está junto do arquivo `index.html` do jogo).</li>
+                    </ul>
+                </li>
+                <li>Se <code>type="text"</code>: Escreva o texto que você quer que apareça na carta.</li>
+            </ul>
+        </li>
+        <li><strong>alt (Texto Alternativo/Descrição):</strong>
+            <ul>
+                <li>Se <code>type="image"</code>: Escreva uma breve descrição da imagem. Isso é muito importante para acessibilidade (para pessoas que usam leitores de tela) e também será o texto lido se a opção "Habilitar Leitura das Cartas" estiver ativa.</li>
+                <li>Se <code>type="text"</code>: Este campo pode ser deixado em branco, ou você pode adicionar uma nota se desejar.</li>
+            </ul>
+        </li>
+    </ul>
+    <p><strong>Exemplo de Linhas em um Arquivo CSV:</strong></p>
+    <pre><code>id,type,content,alt
+1,image,https://i.imgur.com/kSaaKeo.png,Duas cargas elétricas positivas com linhas de campo se repelindo
+1,text,Cargas Elétricas de Mesmo Sinal,
+2,image,https://i.imgur.com/w3lkwdF.png,Duas cargas elétricas de sinais opostos com linhas de campo se atraindo
+2,text,Cargas Elétricas de Sinais Opostos,
+3,text,Fotossíntese,Processo vital para as plantas
+3,text,Processo pelo qual as plantas produzem seu alimento usando luz solar.,
+</code></pre>
+    <p>Após criar e salvar seu arquivo com a extensão <code>.csv</code>, use o botão "Escolher arquivo" na tela inicial do jogo para carregá-lo.</p>
+
+    <h3>Dicas para um Bom Jogo:</h3>
+    <ul>
+        <li><strong>Concentre-se!</strong> Preste muita atenção às cartas que são viradas, mesmo que não sejam as suas.</li>
+        <li><strong>Comece pelos cantos ou bordas:</strong> Alguns jogadores acham mais fácil memorizar essas posições.</li>
+        <li><strong>Crie associações:</strong> Tente associar o conteúdo da carta com sua posição na grade.</li>
+        <li><strong>Divirta-se!</strong> O aprendizado é mais eficaz quando é divertido.</li>
+    </ul>
+    <p>Esperamos que você aproveite e aprenda muito com o Jogo da Memória - Imagem e Texto!</p>
+    <button id="close-instructions-button" role="button">Fechar Instruções</button>
+</div>
 
         <input type="file" id="file-input" accept=".csv" aria-label="Escolher arquivo CSV" />
         <button id="start-button" role="button" style="display: none;">Começar Jogo</button>
