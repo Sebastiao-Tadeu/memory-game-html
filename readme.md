@@ -1,4 +1,4 @@
-#### Jogo da Memória - Imagem e Texto
+#### ## Jogo da Memória - Imagem e Texto
 
 Bem-vindo ao **Jogo da Memória - Imagem e Texto**! Este é um jogo educativo interativo projetado para tornar o aprendizado divertido e envolvente. Ideal para ser utilizado em salas de Atendimento Educacional Especializado (AEE), salas de aula ou para estudo individual, o jogo permite a personalização completa do conteúdo para atender às necessidades específicas dos usuários.
 
@@ -14,6 +14,7 @@ Bem-vindo ao **Jogo da Memória - Imagem e Texto**! Este é um jogo educativo in
 * [Configurações do Jogo](#configurações-do-jogo)
 * [Personalização de Conteúdo](#personalização-de-conteúdo)
   * [Formato do Arquivo CSV (Comum para Online e Offline)](#formato-do-arquivo-csv-comum-para-online-e-offline)
+  * [Arquivo CSV de Exemplo para Teste](#arquivo-csv-de-exemplo-para-teste)
   * [1. Personalização para Jogar Online (Usando Imagens da Internet)](#1-personalização-para-jogar-online-usando-imagens-da-internet)
   * [2. Personalização para Jogar Offline (Usando Imagens do seu Computador)](#2-personalização-para-jogar-offline-usando-imagens-do-seu-computador)
 * [Sistema de Medalhas](#sistema-de-medalhas)
@@ -45,7 +46,8 @@ Você pode jogar a versão mais recente do jogo diretamente no seu navegador atr
 No jogo online:
 
 1. Clique no botão **"Escolher arquivo"** e selecione um arquivo `.csv` com os dados das cartas.
-   * Para que as imagens personalizadas funcionem na versão online, elas **devem estar hospedadas na internet** e seus links diretos (URLs) devem ser usados no arquivo CSV. Veja a seção "Personalização para Jogar Online" abaixo para mais detalhes.
+   * Para que as imagens personalizadas funcionem na versão online, elas **devem estar hospedadas na internet** (veja a seção "Personalização para Jogar Online" abaixo).
+   * Você pode usar o [arquivo CSV de exemplo para teste](#arquivo-csv-de-exemplo-para-teste) fornecido abaixo para começar rapidamente.
 2. Após selecionar o arquivo, clique em **"Começar Jogo"**.
 
 ### Objetivo do Jogo
@@ -68,7 +70,7 @@ Antes de iniciar uma partida, ou mesmo durante (as alterações podem exigir um 
 * **Modo Single-Player**: Ative para jogar sozinho. Desative para jogar em modo de equipes.
 * **Habilitar Leitura das Cartas**: Ative para que o conteúdo das cartas (texto ou descrição `alt` da imagem) seja lido em voz alta (requer suporte do navegador à Web Speech API).
 * **Dimensões das Cartas**: Ajuste a **largura** e **altura** das cartas (em pixels) conforme sua preferência.
-* **Limitar número de pares**: Defina um número máximo de pares para o jogo. Se o arquivo CSV contiver mais pares que o limite, o jogo selecionará aleatoriamente o número de pares definido. Digite `0` para usar todos os pares do arquivo CSV.
+* **Limitar número de pares**: Defina um número máximo de pares para o jogo. Se o arquivo CSV contiver mais pares que o limite, o jogo selecionará aleatoriamente o número de pares especificado. Digite `0` para usar todos os pares do arquivo CSV.
 
 * * *
 
@@ -89,21 +91,27 @@ O arquivo CSV deve seguir um formato específico para que o jogo possa entendê-
    * Se `type` for `image`, esta coluna deve conter um texto alternativo descritivo para a imagem (importante para acessibilidade e para a leitura em voz alta).
    * Se `type` for `text`, esta coluna pode ser deixada vazia ou conter uma breve descrição (opcional).
 
-#### Exemplo de Arquivo CSV
+
+
+#### Exemplo de Arquivo CSV (primeira linha é o cabeçalho obrigatório)
 
 ```csv
-# Este é um arquivo CSV para o Jogo da Memória - Imagem e Texto
-# Formato: id,type,content,alt
 id,type,content,alt
-1,image,imagens/emocao/1.png,garoto expressando medo
-1,text,Medo
-2,image,imagens/emocao/2.png,homem expressando raiva
-2,text,Raiva
-3,image,imagens/emocao/3.png,menina expressando alegria
-3,text,Alegria
+1,image,caminho_ou_url_da_imagem1.png,Descrição da Imagem 1 para acessibilidade
+1,text,Texto correspondente ao par da Imagem 1,
+2,image,caminho_ou_url_da_imagem2.jpg,Descrição da Imagem 2
+2,text,Texto correspondente ao par da Imagem 2,
 ```
 
-#### 1. Personalização para Jogar Online (Usando Imagens da Internet)
+#### Arquivo CSV de Exemplo para Teste
+
+Para ajudar você a começar e entender a estrutura, disponibilizamos um arquivo CSV de exemplo pronto para uso ou para servir de modelo. Ele contém exemplos de cartas com diferentes tipos de conteúdo.
+
+[**Clique aqui para baixar o arquivo CSV de exemplo (exemplo_Modelo.csv)**](https://www.google.com/url?sa=E&source=gmail&q=https://drive.google.com/uc?export=download%26id=165Hwtxke-Pk69w5gjtEER1FWGvmXV23w)
+
+Você pode editá-lo e substituir as URLs das imagens por links diretos para suas próprias imagens hospedadas na internet (ex: Imgur), como explicado na seção "Personalização para Jogar Online". 
+
+### 1. Personalização para Jogar Online (Usando Imagens da Internet)
 
 Ao jogar a versão online (disponível em [Jogo da Memória - Imagem e Texto](https://sebastiao-tadeu.github.io/memory-game-html/)), se você quiser usar um arquivo CSV com suas próprias imagens, essas imagens **precisam estar acessíveis publicamente na internet**.
 
@@ -111,11 +119,12 @@ Ao jogar a versão online (disponível em [Jogo da Memória - Imagem e Texto](ht
   
   * **Serviços de Hospedagem de Imagens:** Faça upload das suas imagens para serviços como [Imgur](https://imgur.com/), [Postimages](https://postimages.org/) ou similar. Após o upload, esses serviços fornecem um **"Link Direto"** (geralmente terminando em `.png`, `.jpg`, etc., e começando com `https://i.imgur.com/...` no caso do Imgur). É este link direto que você deve usar na coluna `content` do seu CSV.
   * **Outras Fontes Online:** Qualquer imagem que já esteja online e tenha uma URL pública direta pode ser usada.
-  * **Google Drive/Dropbox, etc.:** Links de compartilhamento padrão desses serviços geralmente **não** são links diretos para a imagem e podem não funcionar. É preciso obter um link que sirva a imagem diretamente (o que pode ser complicado ou não confiável). Prefira serviços de hospedagem de imagens.
+  * **Google Drive/Dropbox, etc.:** Links de compartilhamento padrão desses serviços geralmente **não** são links diretos para a imagem e podem não funcionar. Se for usar, garanta que o arquivo está compartilhado publicamente e use um formato de link que force o acesso direto à imagem (como o exemplo `uc?export=view&id=...` ou `uc?export=download&id=...`), mas saiba que estes não são tão confiáveis quanto serviços dedicados à hospedagem de imagens para sites.
 
 * **Exemplo de Linha no CSV para Jogo Online (usando Imgur):**
-
-      1,image,https://i.imgur.com/imagem.png, Descrição da imagem
+  Snippet de código
+  
+      1,image,https://i.imgur.com/kSaaKeo.png, Descrição da imagem hospedada no Imgur
 
 * **Importante:** Caminhos para arquivos no seu computador (ex: `C:\Imagens\foto.png` ou `minhas_fotos/gato.jpg`) **não funcionarão** na versão online devido às restrições de segurança dos navegadores.
 
@@ -125,10 +134,10 @@ Se você prefere usar imagens que estão salvas no seu computador sem precisar e
 
 * **Passo 1: Baixar os Arquivos do Jogo**
   
-  1. Acesse o repositório do jogo no GitHub: [`https://github.com/sebastiao-tadeu/memory-game-html/`](https://www.google.com/url?sa=E&source=gmail&q=https://github.com/sebastiao-tadeu/memory-game-html/) (Este é o link do seu jogo online, o repositório pode ter o mesmo nome ou similar).
+  1. Acesse o repositório do jogo no GitHub: [`https://github.com/sebastiao-tadeu/memory-game-html/`](https://www.google.com/url?sa=E&source=gmail&q=https://github.com/sebastiao-tadeu/memory-game-html/)
   2. Clique no botão verde **"&lt; > Code"** (Código).
   3. No menu dropdown, selecione **"Download ZIP"**.
-  4. Salve o arquivo ZIP no seu computador e extraia o conteúdo para uma pasta de sua preferência (ex: `C:\Jogos\JogoDaMemoria`).
+  4. Salve o arquivo ZIP no seu computador e extraia o conteúdo para uma pasta de sua preferência (ex: `Meus Documentos/JogoDaMemoria`).
 
 * **Passo 2: Preparar seu CSV e Imagens Locais**
   
@@ -143,6 +152,7 @@ Se você prefere usar imagens que estão salvas no seu computador sem precisar e
      * Se a imagem estiver na mesma pasta que o `index.html`, o caminho seria apenas `gato.png`.
      
      * **Exemplo de Linha no CSV para Jogo Offline:**
+       
           1,image,minhas_imagens_locais/gato.png,Gato laranja da minha pasta local
 
 * **Passo 3: Jogar Offline**
@@ -151,8 +161,6 @@ Se você prefere usar imagens que estão salvas no seu computador sem precisar e
   2. Encontre o arquivo `index.html` e dê um duplo clique nele (ou "Abrir com" seu navegador preferido).
   3. O jogo abrirá no seu navegador. A URL na barra de endereços começará com `file:///...`.
   4. Agora, no jogo, clique em "Escolher arquivo" e selecione o seu arquivo CSV com os caminhos para as imagens locais. As imagens devem carregar corretamente.
-
-* * *
 
 Sistema de Medalhas
 -------------------
@@ -203,5 +211,3 @@ Créditos
     * GitHub:[Sebastiao-Tadeu · GitHub](https://github.com/Sebastiao-Tadeu)
   * **Alexsandra Barbosa da Silva**
     * Email: [alexsa7@gmail.com](mailto:alexa7@gmail.com)
-
-
