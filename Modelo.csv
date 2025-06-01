@@ -1,0 +1,21 @@
+# Este é um arquivo CSV para o Jogo da Memória - Imagem e Texto
+# Formato: id,type,content,alt
+id,type,content,alt
+1,image, https://i.imgur.com/kSaaKeo.png, Duas cargas elétricas com linhas de campo se repelindo
+1,text, Cargas Elétricas de Mesmo Sinal,
+2,image, https://i.imgur.com/w3lkwdF.png, Duas cargas elétricas com linhas de campo se atraindo
+2,text, Cargas Elétricas de Sinais Opostos,
+3,image,https://s2.static.brasilescola.uol.com.br/be/2022/06/menino-empurrando-mesa.jpg,"Menino empurrando uma mesa"
+3,text,Segunda Lei de Newton: F = m . a,
+4,image,https://realizeeducacao.com.br/wp-content/webp-express/webp-images/uploads/2021/10/leis-de-ohm.png.webp,
+4,text,Lei de Ohm: U = I . R,
+5,image,https://static.vecteezy.com/ti/vetor-gratis/p1/3658134-uma-maca-caindo-de-uma-arvore-no-fundo-branco-gratis-vetor.jpg,Ilustração de uma maçã caindo em direção à Terra
+5,text,Força Gravitacional,
+# Biologia
+6,image,https://static.todamateria.com.br/upload/ex/er/exercicios-fotossintese-og.jpg?class=ogImageRectangle,"Esquema de uma planta recebendo luz solar"
+6,text,Processo realizado pelas plantas para converter luz solar em energia química.
+7,image,https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/DNA_Structure%2BKey%2BLabelled.pn_NoBB.png/500px-DNA_Structure%2BKey%2BLabelled.pn_NoBB.png,
+7,text,DNA,
+# Química
+8,image,https://p.turbosquid.com/ts-thumb/oL/IjENcS/A0XEFF8x/zentral/jpg/1528376352/600x600/fit_q87/14db2d8d57b1d615d22bba8224b29a62ddd7daaf/zentral.jpg,
+8,text,Molécula de Água (H₂O),
